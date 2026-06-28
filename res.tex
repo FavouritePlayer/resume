@@ -1,0 +1,390 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1 cm, % seperation between body and page edge from the top
+    bottom=1 cm, % seperation between body and page edge from the bottom
+    left=1.5 cm, % seperation between body and page edge from the left
+    right=1.5 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Arjun's CV},
+    pdfauthor={Arjun Nanduri},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+%Changed it from 0.3 to 0.2
+    % top space:
+    0.07 cm
+}{
+    % bottom space:
+    0.12 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.3 cm,
+        parsep=0.05 cm,
+        partopsep=0pt,
+        itemsep=0pt, 
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.07 cm,
+        parsep=0.07 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{extendedtwocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 8 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{15 pt}{15 pt}\selectfont Arjun Nanduri
+
+        \vspace{0.5 pt}
+
+        \normalsize
+        \mbox{Berkeley, CA}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:arjunnanduri@gmail.com}{arjunnanduri@gmail.com}}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+1-407-580-8788}{(407)-580-8788}}%
+        \kern 2.0 pt%
+        \AND%
+        %\kern 5.0 pt%
+        %\mbox{\hrefWithoutArrow{https://yourwebsite.com/}{yourwebsite.com}}%
+        %\kern 5.0 pt%
+        %\AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/arjunnanduri}{linkedin.com/in/arjunnanduri}}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/FavouritePlayer}{github.com/FavouritePlayer}}%
+        
+    \end{header}
+
+    %\vspace{3 pt - 0.1 cm}
+
+    \section{Education}
+
+
+
+        
+        \begin{twocolentry}{
+            Expected May 2027
+        }
+            \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: 3.972, SAT: 1590
+                \item Courses: Probability \& Stochastic Processes, Machine Learning, Computer Security, Data Structures
+            \end{highlights}
+        \end{onecolentry}
+
+
+
+    
+    \section{Experience}
+        \begin{twocolentry}{
+            Aug 2025 – Present
+        }
+            \textbf{Software Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Building a computer vision pipeline in PyTorch to automate construction pile depth tracking, replacing a manual Department of Transport submission process.
+                \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — directly informing model design decisions.
+                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of line markings entirely.
+
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.07 cm}
+        
+        \begin{twocolentry}{
+            May 2025 – Aug 2025
+        }
+            \textbf{Software Engineering Intern}, CACI International Inc. -- Virginia\end{twocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a full-stack web app for U.S. Customs field officers using Angular, Spring Boot, and PostgreSQL.
+                \item Expanded database test coverage by 20\%, enhancing system stability and enabling more efficient bug detection.
+                \item Ramped quickly onto unfamiliar enterprise Spring Boot codebase in Agile team, contributing through sprint planning, standups, and code reviews.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.07 cm}
+
+        \begin{twocolentry}{
+            Jan 2025 – May 2025
+        }
+            \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, achieving 15\% improvement over open-source baselines via custom distance metric.
+                \item Built preprocessing and alignment pipelines for structured linguistic data from the ORACC corpus.
+                \item Stepped up to lead disorganized team with no formal authority — built shared task system, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
+            \end{highlights}
+       \end{onecolentry}
+
+        \vspace{0.07 cm}
+
+        \begin{twocolentry}{
+            Sep 2024 – Dec 2024
+        }
+            \textbf{Software Engineering Intern}, Floras -- Berkeley, CA\end{twocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a Flutter mobile app for carbon offset purchases, integrating Patch.io to display ESG data by region.
+                \item Implemented secure user authentication and token management.
+                \item Analyzed user engagement metrics to inform product decisions, aligning with data-driven sustainability goals.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.07 cm}
+
+        \begin{twocolentry}{
+            Jan 2023 – Aug 2024
+        }
+            \textbf{Software Engineering Intern}, IT Hired Guns Inc. -- Orlando, FL\end{twocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Published B2C cross-platform loyalty apps (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
+                \item Integrated location services and backend APIs to deliver dynamic updates on nearby stations, fuel prices, and offers.
+                \item Contributed to scalable, production-ready codebases that enhanced user retention and data visibility for client partners.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.07 cm}
+
+
+        
+    
+        \section{Projects}
+        
+        \begin{extendedtwocolentry}{
+            \href{https://devpost.com/software/potbot}{https://devpost.com/software/potbot}
+        }
+            \textbf{Scripted Survey Browser AI Agent,} \textit{CalHacks Prize Winner}
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Won sponsor prize at CalHacks — built agentic pipeline using Llama vision model to validate infrastructure damage photos and auto-submit repair requests to SF city government via Playwright browser automation.
+                \item Led team of 3, owned backend and CV pipeline; made key scoping decision to ship working SF demo in 36 hours over unfinished feature set.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/Glimpses}{github.com/FavouritePlayer/Glimpses}
+        }
+            \textbf{Travel Tracker Web App} (ReactJS, Firebase)
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built full-stack web app for mapping and visualizing personal travel memories, delivering a Spotify Wrapped-style breakdown of destinations, time spent, and journey patterns; pitched to Telora VC in Miami.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/webnovel-scraper}{github.com/FavouritePlayer/webnovel-scraper}
+        }
+            \textbf{Chinese Web Novel Translator} (Python, Gemini API)
+        \end{extendedtwocolentry}
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a web scraper that downloads Chinese web novels, translates chapters using the Gemini API with a maintained running dictionary for narrative consistency, and packages output as epub for offline reading.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/swe-skills-data}{github.com/FavouritePlayer/swe-skills-data}
+        }
+            \textbf{Job Skills Analysis} (Python, Pandas, Jupyter)
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a data pipeline with Pandas to scrape job boards and analyze demand for software and data science skills.
+            \end{highlights}
+        \end{onecolentry}
+
+
+    
+    \section{Skills \& Certifications}
+
+
+        
+        \begin{onecolentry}
+            \textbf{Languages:} Python, Java, JavaScript, SQL, Dart, Scheme
+        \end{onecolentry}
+
+        \vspace{0.07 cm}
+
+        \begin{onecolentry}
+            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Excel, Git, scikit-learn, Pandas, Transformers (BART), NLTK, spaCy.
+        \end{onecolentry}
+
+
+        \vspace{0.07 cm}
+
+        \begin{onecolentry}
+            \textbf{Certifications:} Microsoft Certified: Azure AI Fundamentals (Microsoft, 2025), Certified AI Scholar (Inspirit AI, 2023), Bloomberg Market Concepts (Bloomberg, 2025)
+        \end{onecolentry}
+
+
+\end{document}
