@@ -2,9 +2,17 @@
 
 LaTeX source for Arjun Nanduri's resume. See `CLAUDE.md` for the content strategy and editing guidelines.
 
+## Files
+
+- `resume_master.tex` — verbose superset, every bullet, no page limit. Never sent out; the reservoir the other two are cut from.
+- `resume_mle.tex` — one-page, ML/CV-emphasis. Sendable.
+- `resume_swe.tex` — one-page, SWE/Founder-emphasis. Sendable.
+
+All three share the same preamble/macros — content differs, formatting does not.
+
 ## Setup: LaTeX + VS Code rendering (macOS)
 
-Steps to get `res.tex` compiling and previewing inside VS Code's LaTeX Workshop extension on a fresh Mac.
+Steps to get the `.tex` files compiling and previewing inside VS Code's LaTeX Workshop extension on a fresh Mac.
 
 ### 1. Check current state first
 
@@ -53,14 +61,14 @@ rm -rf ~/.vscode/extensions/james-yu.latex-workshop-<OLD_VERSION>
 ```
 export PATH=/Library/TeX/texbin:$PATH
 cd "<path to Resume repo>"
-pdflatex -interaction=nonstopmode res.tex && pdflatex -interaction=nonstopmode res.tex
+latexmk -pdf -aux-directory=.build -emulate-aux-dir -interaction=nonstopmode resume_mle.tex
 ```
 
-Should produce a 1-page `res.pdf` with no errors (run twice — `lastpage` needs a second pass).
+Should produce a 1-page `resume_mle.pdf` in the repo root with no errors. The `-aux-directory=.build` flag keeps `.aux`/`.log`/`.fls`/etc. out of the root directory entirely (tucked into a gitignored `.build/` folder) instead of cluttering `ls`/Finder. Same command applies to `resume_swe.tex`; `resume_master.tex` has no page-count requirement. VS Code's LaTeX Workshop is already configured (see `.vscode/settings.json`) to build the same way.
 
 ### 8. Use it in VS Code
 
-- Open `res.tex` and make sure its tab is **focused** (not the LaTeX Workshop output panel) before running build/view commands.
+- Open the `.tex` file you're editing and make sure its tab is **focused** (not the LaTeX Workshop output panel) before running build/view commands.
 - Save (Cmd+S) to auto-build, or Cmd+Shift+P → "LaTeX Workshop: Build LaTeX project".
 - Click the preview icon (top-right of editor) to view the PDF in-editor.
 
