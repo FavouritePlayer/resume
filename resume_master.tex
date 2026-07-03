@@ -207,7 +207,7 @@
         \vspace{0.07 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Building a computer vision pipeline in PyTorch to automate construction pile depth tracking, replacing a manual Department of Transport submission process.
+                \item Building a multi-stage PyTorch CV pipeline on 1000fps pile-driving footage — object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike — then converting pixel-space line displacement into inch/foot measurements via a depth map, automating a manual Department of Transportation pile depth submission process.
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — directly informing model design decisions.
                 \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of line markings.
             \end{highlights}
@@ -239,8 +239,9 @@
         \vspace{0.07 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, achieving 15\% improvement over open-source baselines via custom distance metric.
-                \item Built preprocessing and alignment pipelines for structured linguistic data from the ORACC corpus.
+                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, beating open-source baselines by 15\% using a custom edit-distance metric over lemma forms.
+                % TODO(Arjun): confirm this scale against your actual fine-tuning subset. Figure below is a published ORACC-wide estimate (~10K annotated texts / ~1M words as of recent counts), not verified against your specific dataset.
+                \item Built preprocessing and alignment pipelines for structured linguistic data from ORACC's cuneiform corpus ($\sim$1M annotated words across $\sim$10K texts).
                 \item Stepped up to lead disorganized team with no formal authority — built shared task system, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
             \end{highlights}
        \end{onecolentry}
@@ -288,7 +289,7 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item Won sponsor prize at CalHacks — built agentic pipeline using Llama vision model to validate infrastructure damage photos and auto-submit repair requests to SF city government via Playwright browser automation.
-                \item Led team of 3, owned backend and CV pipeline; made key scoping decision to ship working SF demo in 36 hours over unfinished feature set.
+                \item Led team of 3, owned backend and CV pipeline; shipped working SF demo in 36 hours over an unfinished feature set.
             \end{highlights}
         \end{onecolentry}
 
