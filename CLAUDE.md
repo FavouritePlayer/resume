@@ -8,7 +8,7 @@ Arjun Nanduri — rising junior, UC Berkeley CS/CDSS, GPA 3.972, grad May 2027. 
 
 ## File structure — one master + N specialized profiles
 
-1. **`resume_master.tex`** — verbose superset, **as complete as possible.** Every bullet, every project, every piece of real detail that exists should live here — full technical mechanism, real numbers, full history, no trimming for space. NO page limit, and none should ever be imposed on it. **Never sent out.** This is the reservoir every specialized profile cuts from. When a role needs a bullet that was trimmed from a profile, pull it from here instead of rewriting from memory. Keep it complete and current — anything true and relevant belongs in the master even if no profile currently uses it.
+1. **`cv_master.tex`** — verbose superset, **as complete as possible.** Named `cv_` rather than `resume_` deliberately: it isn't a resume, it's never sent, and calling it one invited confusion. Every bullet, every project, every piece of real detail that exists should live here — full technical mechanism, real numbers, full history, no trimming for space. NO page limit, and none should ever be imposed on it. **Never sent out.** This is the reservoir every specialized profile cuts from. When a role needs a bullet that was trimmed from a profile, pull it from here instead of rewriting from memory. Keep it complete and current — anything true and relevant belongs in the master even if no profile currently uses it.
 2. **`resume_mle.tex`** — ONE PAGE. ML / CV emphasis. Sendable.
 3. **`resume_swe.tex`** — ONE PAGE. SWE / Founder emphasis. Sendable.
 
@@ -19,7 +19,7 @@ These two (`_mle`, `_swe`) are the specialized profiles that exist today, not a 
 ## One-page policy
 
 - **Every specialized profile is hard one page.** This applies to `_mle`, `_swe`, and any specialized profile added in the future — no exceptions. For an undergrad with no PhD, a multi-page applied/SWE resume reads as not knowing the convention; recruiters skim page one anyway. The one-page constraint is what forces the weak bullets out — that's the point.
-- **`resume_master.tex` is the opposite: intentionally unbounded and as verbose as possible.** It should contain everything — it's the superset, never sent, never trimmed for length. More detail in the master is always better; the page limit only applies once content is filtered into a specialized profile.
+- **`cv_master.tex` is the opposite: intentionally unbounded and as verbose as possible.** It should contain everything — it's the superset, never sent, never trimmed for length. More detail in the master is always better; the page limit only applies once content is filtered into a specialized profile.
 - Compile and **visually verify** each specialized profile is actually one page before declaring it done. Do not trust line counts; read the rendered PDF.
 
 ## The specialized profiles (currently two)
@@ -30,7 +30,7 @@ Leads with depth signal: BART low-resource NLP work, Aver CV pipeline, `ant_sim`
 **`resume_swe.tex` — SWE / Founder — proves shipping.**
 Leads with PotBot (won CalHacks prize, led team of 3, shipped working SF demo in 36h over an unfinished feature set — the founder signal stated perfectly), plus two more recent hackathon agent projects (`DealScout` — resale-arbitrage agent, LangGraph/Playwright/HydraDB; `ContextCustodian` — workspace-hygiene agent, FastAPI/Scalekit), full-stack range, ownership/scoping decisions. Technical depth appears as supporting evidence, not the headline.
 
-Same facts in both — different ordering, emphasis, and which bullets are included. Travel Tracker Web App and the Chinese Web Novel Translator were cut from the one-pagers to make room for these (still live in full in `resume_master.tex` — pull them back if a specific role calls for them).
+Same facts in both — different ordering, emphasis, and which bullets are included. Travel Tracker Web App and the Chinese Web Novel Translator were cut from the one-pagers to make room for these (still live in full in `cv_master.tex` — pull them back if a specific role calls for them).
 
 ## Near-term target
 
@@ -42,7 +42,7 @@ Self-understanding to respect: *Founder = shipping, not technical depth. But dep
 
 ## Known gaps / things to keep honest
 
-- **ORACC corpus scale** (`resume_master.tex`, CDSS bullet) is a published ORACC-wide estimate ($\sim$1M words / $\sim$10K texts), not verified against Arjun's specific fine-tuning subset — flagged with a `% TODO(Arjun)` comment in the master `.tex`. Confirm before this number goes out on a profile that hasn't been checked against it.
+- **ORACC corpus scale** (`cv_master.tex`, CDSS bullet) is a published ORACC-wide estimate ($\sim$1M words / $\sim$10K texts), not verified against Arjun's specific fine-tuning subset — flagged with a `% TODO(Arjun)` comment in the master `.tex`. Confirm before this number goes out on a profile that hasn't been checked against it.
 - **DealScout / ContextCustodian** have no quantified outcome metric (no eval numbers, no before/after) — bullets sell the mechanism and engineering judgment, not a result. Don't force a fake metric onto either.
 
 ## Phrasing principles

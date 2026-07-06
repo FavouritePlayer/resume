@@ -13,7 +13,7 @@
 *.blg
 
 # Never-sent reservoir doc — no need to track its rendered PDF
-resume_master.pdf
+cv_master.pdf
 
 # macOS
 .DS_Store
