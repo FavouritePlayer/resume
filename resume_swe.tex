@@ -215,15 +215,30 @@
         \end{onecolentry}
 
         \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/Glimpses}{github.com/FavouritePlayer/Glimpses}
+            \href{https://github.com/FavouritePlayer/DealScout}{github.com/FavouritePlayer/DealScout}
         }
-            \textbf{Travel Tracker Web App} (ReactJS, Firebase)
+            \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
         \end{extendedtwocolentry}
 
         \vspace{0.07 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built full-stack web app for mapping and visualizing personal travel memories, delivering a Spotify Wrapped-style breakdown of destinations, time spent, and journey patterns; pitched to Telora VC in Miami.
+                \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment, then filters and ranks candidates through a structured-output LLM call.
+                \item Integrated HydraDB as a per-user memory store so rejection feedback persists across sessions and improves future filtering; diagnosed a silent dependency conflict that was breaking vector DB writes with no error at insert time.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/ContextCustodian}{github.com/FavouritePlayer/ContextCustodian}
+        }
+            \textbf{Context Custodian — Workspace Hygiene Agent} (FastAPI)
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a FastAPI agent that audits and cleans an agent-first workspace, acting as the user via the Scalekit SDK; every fix is a reversible move, never a delete.
+                \item Designed a three-stage prompt-injection detection pipeline (regex, vector similarity, LLM adjudication) with a fail-open fallback, and engineered fix reporting that's honest about whether an action executed live or only updated the local index.
             \end{highlights}
         \end{onecolentry}
 
@@ -311,7 +326,7 @@
         \vspace{0.07 cm}
 
         \begin{onecolentry}
-            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, MongoDB, Git, PyTorch, scikit-learn, Pandas.
+            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, MongoDB, Git, PyTorch, scikit-learn, Pandas, LangGraph, FastAPI, Playwright.
         \end{onecolentry}
 
 \end{document}

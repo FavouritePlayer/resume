@@ -294,6 +294,54 @@
         \end{onecolentry}
 
         \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/ant_sim}{github.com/FavouritePlayer/ant\_sim}
+        }
+            \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, Stable-Baselines3)
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Trained PPO quadruped policies in MuJoCo/Gymnasium, benchmarking flat-ground baselines against terrain-adapted and damage-robust variants across 10 matched random seeds per condition.
+                \item Terrain adaptation: policy trained on randomized heightfields achieves 2.1x the reward (893$\pm$130 vs. 424$\pm$106) and 40\% lower fall rate (30\% vs. 50\%) than the flat-trained baseline on unseen rough terrain.
+                \item Leg-damage robustness: a specialist policy trained with one leg permanently amputated reaches $\sim$49x the flat-baseline reward (2148$\pm$749 vs. 44$\pm$37) with 20\% vs. 100\% fall rate on that leg; documented that the policy does not transfer to other legs (100\% fall).
+                \item Built a compound policy router that switches checkpoints by which leg is amputated, beating any single policy (836$\pm$909 vs. 497$\pm$737 mean reward, 78\% vs. 90\% fall rate) across a 4-leg $\times$ 10-seed evaluation sweep.
+                \item Validated all headline results via multi-seed training replication and an automated regression test suite; generated comparison videos for each experiment.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/DealScout}{github.com/FavouritePlayer/DealScout}
+        }
+            \textbf{DealScout — Resale Arbitrage Agent,} \textit{Hackathon Project} (LangGraph, Playwright, HydraDB)
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment to avoid hallucinated pricing, then filters and ranks candidates through a structured-output LLM call.
+                \item Integrated HydraDB as a per-user external memory store: rejection feedback is ingested as natural-language preferences and recalled on future scans so filtering improves session over session.
+                \item Diagnosed and fixed a silent dependency conflict where a transitive protobuf pin broke the vector DB client's writes with no error at insert time; resolved via explicit no-deps install plus version re-assertion.
+                \item Restricted image-attachment to the post-filter candidate queue instead of the full scan, avoiding a $\sim$4x blowup in scan time.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/ContextCustodian}{github.com/FavouritePlayer/ContextCustodian}
+        }
+            \textbf{Context Custodian — Workspace Hygiene Agent,} \textit{Hackathon Project} (FastAPI, Scalekit, Actian VectorAI)
+        \end{extendedtwocolentry}
+
+        \vspace{0.07 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a FastAPI agent that audits and cleans an agent-first workspace (duplicate docs, stale-wrong docs, prompt-injection traps), acting as the user via the Scalekit SDK; every fix is a reversible move (quarantine, archive, permission-revoke), never a delete.
+                \item Designed a three-stage prompt-injection detection pipeline — regex prefilter, vector-similarity narrowing over Actian VectorAI embeddings, then LLM adjudication — with a fail-open fallback to regex-only detection if the LLM call fails, keeping live demos safe.
+                \item Engineered honest-by-construction fix reporting: each fix call returns whether the action actually executed against the live workspace or only updated the local audit index, so the UI never claims a success that didn't happen.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
             \href{https://github.com/FavouritePlayer/Glimpses}{github.com/FavouritePlayer/Glimpses}
         }
             \textbf{Travel Tracker Web App} (ReactJS, Firebase)
@@ -340,7 +388,7 @@
         \vspace{0.07 cm}
 
         \begin{onecolentry}
-            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Excel, Git, PyTorch, scikit-learn, Pandas, Transformers (BART), NLTK, spaCy.
+            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Excel, Git, PyTorch, scikit-learn, Pandas, Transformers (BART), NLTK, spaCy, LangGraph, FastAPI, Playwright, MuJoCo, Gymnasium, Stable-Baselines3.
         \end{onecolentry}
 
 \end{document}

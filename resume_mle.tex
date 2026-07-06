@@ -288,14 +288,16 @@
         \end{onecolentry}
 
         \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/webnovel-scraper}{github.com/FavouritePlayer/webnovel-scraper}
+            \href{https://github.com/FavouritePlayer/ant_sim}{github.com/FavouritePlayer/ant\_sim}
         }
-            \textbf{Chinese Web Novel Translator} (Python, Gemini API)
+            \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
         \end{extendedtwocolentry}
+
         \vspace{0.07 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a web scraper that downloads Chinese web novels, translates chapters using the Gemini API with a maintained running dictionary for narrative consistency, and packages output as epub for offline reading.
+                \item Trained PPO quadruped policies in MuJoCo/Gymnasium; terrain-adapted policy achieves 2.1x reward (893$\pm$130 vs. 424$\pm$106) and 40\% lower fall rate than the flat-trained baseline on unseen terrain, validated across 10 matched seeds.
+                \item Built leg-amputation-robust specialist policies ($\sim$49x flat-baseline reward) and a compound policy router that switches checkpoints by damaged leg, beating any single policy across a 4-leg $\times$ 10-seed evaluation sweep.
             \end{highlights}
         \end{onecolentry}
 
@@ -308,7 +310,7 @@
         \vspace{0.07 cm}
 
         \begin{onecolentry}
-            \textbf{Technologies:} PyTorch, Transformers (BART), scikit-learn, Pandas, NLTK, spaCy, React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Git.
+            \textbf{Technologies:} PyTorch, Transformers (BART), scikit-learn, Pandas, NLTK, spaCy, MuJoCo, Gymnasium, Stable-Baselines3, React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Git.
         \end{onecolentry}
 
 \end{document}
