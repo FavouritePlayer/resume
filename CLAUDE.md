@@ -54,7 +54,7 @@ Self-understanding to respect: *Founder = shipping, not technical depth. But dep
 
 ## Workflow
 
-- Edit `.tex` directly. Compile with local MacTeX, read the rendered PDF, iterate against real output until clean and (for specialized profiles) one page.
+- Edit `.tex` directly. Compile with local MacTeX using `latexmk -pdf -aux-directory=.build -emulate-aux-dir -interaction=nonstopmode <file>.tex` (never plain `pdflatex`/`xelatex` directly — that dumps `.aux`/`.log`/etc. into the repo root instead of the gitignored `.build/` folder). Read the rendered PDF, iterate against real output until clean and (for specialized profiles) one page. See `README.md` for full setup.
 - Keep the master as complete and verbose as possible; derive every specialized one-pager from it by cutting, not by drafting fresh.
 - **Orphan-line check (mandatory after any edit that changes wrapping):** after compiling, render each page to an image and read every bullet's line breaks specifically — not just the page count. Look for any line where only one or two words spill onto their own line (a "widow"/orphan). These waste a full line of vertical space and read as sloppy. Fix by trimming a redundant word/clause from that bullet (don't pad neighboring bullets to compensate) and recompile. Do this for every bullet, not just the ones that look long — short bullets can still orphan a word depending on column width.
 - Push after each working session.
