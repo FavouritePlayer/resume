@@ -3,10 +3,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1 cm, % seperation between body and page edge from the top
-    bottom=1 cm, % seperation between body and page edge from the bottom
-    left=1.5 cm, % seperation between body and page edge from the left
-    right=1.5 cm, % seperation between body and page edge from the right
+    top=1.27 cm, % seperation between body and page edge from the top
+    bottom=1.27 cm, % seperation between body and page edge from the bottom
+    left=1.6 cm, % seperation between body and page edge from the left
+    right=1.6 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging
 ]{geometry} % for adjusting page geometry
@@ -62,12 +62,11 @@
     % left space:
     -1pt
 }{
-%Changed it from 0.3 to 0.2
     % top space:
-    0.07 cm
+    0.15 cm
 }{
     % bottom space:
-    0.12 cm
+    0.18 cm
 } % section title spacing
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
@@ -76,7 +75,7 @@
         topsep=0.3 cm,
         parsep=0.05 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.02 cm,
         leftmargin=0 cm + 10pt
     ]
 }{
@@ -86,10 +85,10 @@
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.07 cm,
-        parsep=0.07 cm,
+        topsep=0.15 cm,
+        parsep=0.12 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.02 cm,
         leftmargin=10pt
     ]
 }{
@@ -190,7 +189,7 @@
         }
             \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item GPA: 3.9 | SAT: 1590
@@ -206,11 +205,11 @@
             \textbf{Scripted Survey Browser AI Agent,} \textit{CalHacks Prize Winner}
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Won sponsor prize at CalHacks — led team of 3, owned backend and CV pipeline; shipped working SF demo in 36 hours over an unfinished feature set.
-                \item Built agentic pipeline using a Llama vision model to validate infrastructure damage photos and auto-submit repair requests to SF city government via Playwright browser automation.
+                \item Won sponsor prize at CalHacks — led team of 3, owned backend and CV pipeline; \textbf{shipped working SF demo in 36 hours} over an unfinished feature set.
+                \item Built agentic pipeline using a Llama vision model to validate infrastructure damage photos and \textbf{auto-submit repair requests to SF city government} via Playwright browser automation.
             \end{highlights}
         \end{onecolentry}
 
@@ -220,11 +219,11 @@
             \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment, then filters and ranks candidates through a structured-output LLM call.
-                \item Integrated HydraDB as a per-user memory store so rejection feedback persists across sessions and improves future filtering; diagnosed a silent dependency conflict that was breaking vector DB writes with no error at insert time.
+                \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with \textbf{deterministic arithmetic kept separate from LLM judgment}, then filters and ranks candidates through a structured-output LLM call.
+                \item Integrated HydraDB as a per-user memory store so rejection feedback persists across sessions and improves future filtering; \textbf{diagnosed a silent dependency conflict} that was breaking vector DB writes with no error at insert time.
             \end{highlights}
         \end{onecolentry}
 
@@ -234,11 +233,11 @@
             \textbf{Context Custodian — Workspace Hygiene Agent} (FastAPI)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a FastAPI agent that audits and cleans an agent-first workspace, acting as the user via the Scalekit SDK; every fix is a reversible move, never a delete.
-                \item Designed a three-stage prompt-injection detection pipeline (regex, vector similarity, LLM adjudication) with a fail-open fallback, and engineered fix reporting that's honest about whether an action executed live or only updated the local index.
+                \item Built a FastAPI agent that audits and cleans an agent-first workspace, acting as the user via the Scalekit SDK; \textbf{every fix is a reversible move, never a delete}.
+                \item Designed a three-stage prompt-injection detection pipeline (regex, vector similarity, LLM adjudication) with a fail-open fallback, and engineered fix reporting that's \textbf{honest about whether an action executed live or only updated the local index}.
             \end{highlights}
         \end{onecolentry}
 
@@ -248,72 +247,72 @@
         }
             \textbf{Machine Learning Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built multi-stage PyTorch CV pipeline (YOLO detection + segmentation on painted depth markings, audio-visual hit sync, depth-map distance conversion) on 1000fps footage, automating a manual DOT pile depth submission process.
-                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of line markings.
+                \item Built multi-stage PyTorch CV pipeline (YOLO detection + segmentation on painted depth markings, audio-visual hit sync, depth-map distance conversion) on 1000fps footage, \textbf{automating manual DOT pile depth submission}.
+                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, \textbf{Phase 2 LIDAR elimination of markings}.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             May 2025 – Aug 2025
         }
             \textbf{Software Engineering Intern}, CACI International Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a full-stack web app for U.S. Customs field officers using Angular, Spring Boot, and PostgreSQL.
-                \item Expanded database test coverage by 20\%, enhancing system stability and enabling more efficient bug detection.
-                \item Ramped quickly onto unfamiliar enterprise Spring Boot codebase in Agile team, contributing through sprint planning, standups, and code reviews.
+                \item Built a full-stack web app for \textbf{U.S. Customs field officers} using Angular, Spring Boot, and PostgreSQL.
+                \item Expanded database test coverage \textbf{by 20\%}, enhancing system stability and enabling more efficient bug detection.
+                \item \textbf{Ramped quickly onto unfamiliar enterprise Spring Boot codebase} in Agile team, contributing through sprint planning, standups, and code reviews.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             Jan 2025 – May 2025
         }
             \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, beating open-source baselines by 15\% using a custom edit-distance metric over lemma forms.
-                \item Stepped up to lead disorganized team with no formal authority — built shared task system, presented at UC Berkeley Discovery Symposium.
+                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using a custom edit-distance metric over lemma forms.
+                \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
             \end{highlights}
        \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             Sep 2024 – Dec 2024
         }
             \textbf{Software Engineering Intern}, Floras -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a Flutter mobile app for carbon offset purchases, integrating Patch.io to display ESG data by region.
-                \item Implemented secure user authentication and token management.
+                \item Built a Flutter mobile app for carbon offset purchases, \textbf{integrating Patch.io} to display ESG data by region.
+                \item Implemented \textbf{secure user authentication and token management}.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             Jan 2023 – Aug 2024
         }
             \textbf{Software Engineering Intern}, IT Hired Guns Inc. -- Orlando, FL\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Published B2C cross-platform loyalty apps (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
-                \item Integrated location services and backend APIs to deliver dynamic updates on nearby stations, fuel prices, and offers.
+                \item Published \textbf{B2C cross-platform loyalty apps} (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
+                \item Integrated location services and backend APIs to deliver \textbf{updates on nearby stations, fuel prices, and offers}.
             \end{highlights}
         \end{onecolentry}
 
@@ -323,7 +322,7 @@
             \textbf{Languages:} Python, Java, JavaScript, SQL, Dart, Scheme
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{onecolentry}
             \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, MongoDB, Git, PyTorch, scikit-learn, Pandas, LangGraph, FastAPI, Playwright.

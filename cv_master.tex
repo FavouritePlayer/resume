@@ -3,10 +3,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1 cm, % seperation between body and page edge from the top
-    bottom=1 cm, % seperation between body and page edge from the bottom
-    left=1.5 cm, % seperation between body and page edge from the left
-    right=1.5 cm, % seperation between body and page edge from the right
+    top=1.15 cm, % seperation between body and page edge from the top
+    bottom=1.15 cm, % seperation between body and page edge from the bottom
+    left=1.6 cm, % seperation between body and page edge from the left
+    right=1.6 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging
 ]{geometry} % for adjusting page geometry
@@ -62,12 +62,11 @@
     % left space:
     -1pt
 }{
-%Changed it from 0.3 to 0.2
     % top space:
-    0.07 cm
+    0.15 cm
 }{
     % bottom space:
-    0.12 cm
+    0.18 cm
 } % section title spacing
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
@@ -76,7 +75,7 @@
         topsep=0.3 cm,
         parsep=0.05 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.02 cm,
         leftmargin=0 cm + 10pt
     ]
 }{
@@ -86,10 +85,10 @@
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.07 cm,
-        parsep=0.07 cm,
+        topsep=0.15 cm,
+        parsep=0.12 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.02 cm,
         leftmargin=10pt
     ]
 }{
@@ -190,7 +189,7 @@
         }
             \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item GPA: 3.9 | SAT: 1590
@@ -204,23 +203,23 @@
         }
             \textbf{Machine Learning Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Building a multi-stage PyTorch CV pipeline on 1000fps pile-driving footage — object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike — then converting pixel-space line displacement into inch/foot measurements via a depth map, automating a manual Department of Transportation pile depth submission process.
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — directly informing model design decisions.
-                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of line markings.
+                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of markings.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             May 2025 – Aug 2025
         }
             \textbf{Software Engineering Intern}, CACI International Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a full-stack web app for U.S. Customs field officers using Angular, Spring Boot, and PostgreSQL.
@@ -229,14 +228,14 @@
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             Jan 2025 – May 2025
         }
             \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, beating open-source baselines by 15\% using a custom edit-distance metric over lemma forms.
@@ -246,14 +245,14 @@
             \end{highlights}
        \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             Sep 2024 – Dec 2024
         }
             \textbf{Software Engineering Intern}, Floras -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a Flutter mobile app for carbon offset purchases, integrating Patch.io to display ESG data by region.
@@ -262,14 +261,14 @@
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{twocolentry}{
             Jan 2023 – Aug 2024
         }
             \textbf{Software Engineering Intern}, IT Hired Guns Inc. -- Orlando, FL\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Published B2C cross-platform loyalty apps (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
@@ -285,7 +284,7 @@
             \textbf{Scripted Survey Browser AI Agent,} \textit{CalHacks Prize Winner}
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Won sponsor prize at CalHacks — built agentic pipeline using Llama vision model to validate infrastructure damage photos and auto-submit repair requests to SF city government via Playwright browser automation.
@@ -299,7 +298,7 @@
             \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, Stable-Baselines3)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Trained PPO quadruped policies in MuJoCo/Gymnasium, benchmarking flat-ground baselines against terrain-adapted and damage-robust variants across 10 matched random seeds per condition.
@@ -316,7 +315,7 @@
             \textbf{DealScout — Resale Arbitrage Agent,} \textit{Hackathon Project} (LangGraph, Playwright, HydraDB)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment to avoid hallucinated pricing, then filters and ranks candidates through a structured-output LLM call.
@@ -332,7 +331,7 @@
             \textbf{Context Custodian — Workspace Hygiene Agent,} \textit{Hackathon Project} (FastAPI, Scalekit, Actian VectorAI)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a FastAPI agent that audits and cleans an agent-first workspace (duplicate docs, stale-wrong docs, prompt-injection traps), acting as the user via the Scalekit SDK; every fix is a reversible move (quarantine, archive, permission-revoke), never a delete.
@@ -347,7 +346,7 @@
             \textbf{Travel Tracker Web App} (ReactJS, Firebase)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built full-stack web app for mapping and visualizing personal travel memories, delivering a Spotify Wrapped-style breakdown of destinations, time spent, and journey patterns; pitched to Telora VC in Miami.
@@ -359,7 +358,7 @@
         }
             \textbf{Chinese Web Novel Translator} (Python, Gemini API)
         \end{extendedtwocolentry}
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a web scraper that downloads Chinese web novels, translates chapters using the Gemini API with a maintained running dictionary for narrative consistency, and packages output as epub for offline reading.
@@ -372,7 +371,7 @@
             \textbf{Job Skills Analysis} (Python, Pandas, Jupyter)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a data pipeline with Pandas to scrape job boards and analyze demand for software and data science skills.
@@ -385,7 +384,7 @@
             \textbf{Languages:} Python, Java, JavaScript, SQL, Dart, Scheme
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.10 cm}
 
         \begin{onecolentry}
             \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Excel, Git, PyTorch, scikit-learn, Pandas, Transformers (BART), NLTK, spaCy, LangGraph, FastAPI, Playwright, MuJoCo, Gymnasium, Stable-Baselines3.

@@ -3,10 +3,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1 cm, % seperation between body and page edge from the top
-    bottom=1 cm, % seperation between body and page edge from the bottom
-    left=1.5 cm, % seperation between body and page edge from the left
-    right=1.5 cm, % seperation between body and page edge from the right
+    top=1.5 cm, % seperation between body and page edge from the top
+    bottom=1.5 cm, % seperation between body and page edge from the bottom
+    left=1.6 cm, % seperation between body and page edge from the left
+    right=1.6 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging
 ]{geometry} % for adjusting page geometry
@@ -62,12 +62,11 @@
     % left space:
     -1pt
 }{
-%Changed it from 0.3 to 0.2
     % top space:
-    0.07 cm
+    0.22 cm
 }{
     % bottom space:
-    0.12 cm
+    0.25 cm
 } % section title spacing
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
@@ -76,7 +75,7 @@
         topsep=0.3 cm,
         parsep=0.05 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.02 cm,
         leftmargin=0 cm + 10pt
     ]
 }{
@@ -86,10 +85,10 @@
 
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.07 cm,
-        parsep=0.07 cm,
+        topsep=0.15 cm,
+        parsep=0.12 cm,
         partopsep=0pt,
-        itemsep=0pt,
+        itemsep=0.02 cm,
         leftmargin=10pt
     ]
 }{
@@ -190,7 +189,7 @@
         }
             \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item GPA: 3.9 | SAT: 1590
@@ -204,12 +203,12 @@
         }
             \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, beating open-source baselines by 15\% using a custom edit-distance metric over lemma forms.
-                \item Built preprocessing and alignment pipelines for structured linguistic data from ORACC's cuneiform corpus ($\sim$1M annotated words across $\sim$10K texts).
-                \item Stepped up to lead disorganized team with no formal authority — built shared task system, presented at UC Berkeley Discovery Symposium.
+                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using a custom edit-distance metric over lemma forms.
+                \item Built preprocessing and alignment pipelines for structured linguistic data from ORACC's cuneiform corpus (\textbf{$\sim$1M annotated words across $\sim$10K texts}).
+                \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
             \end{highlights}
        \end{onecolentry}
 
@@ -219,55 +218,55 @@
         }
             \textbf{Machine Learning Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built multi-stage PyTorch CV pipeline on 1000fps pile-driving footage — YOLO detection and segmentation to track painted depth markings, audio-visual synchronization to isolate hammer strikes, and depth-map-based pixel-to-real-world conversion — automating a manual DOT pile depth submission process.
-                \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — directly informing model design decisions.
-                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of line markings.
+                \item Built multi-stage PyTorch CV pipeline on 1000fps pile-driving footage — YOLO detection and segmentation to track painted depth markings, audio-visual synchronization to isolate hammer strikes, and depth-map-based pixel-to-real-world conversion — \textbf{automating a manual DOT pile depth submission process}.
+                \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — \textbf{directly informing model design decisions}.
+                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, \textbf{Phase 2 LIDAR elimination of markings}.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
 
         \begin{twocolentry}{
             May 2025 – Aug 2025
         }
             \textbf{Software Engineering Intern}, CACI International Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a full-stack web app for U.S. Customs field officers using Angular, Spring Boot, and PostgreSQL.
-                \item Expanded database test coverage by 20\%, enhancing system stability and enabling more efficient bug detection.
+                \item Built a full-stack web app for \textbf{U.S. Customs field officers} using Angular, Spring Boot, and PostgreSQL.
+                \item Expanded database test coverage \textbf{by 20\%}, enhancing system stability and enabling more efficient bug detection.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
 
         \begin{twocolentry}{
             Sep 2024 – Dec 2024
         }
             \textbf{Software Engineering Intern}, Floras -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a Flutter mobile app for carbon offset purchases, integrating Patch.io to display ESG data by region.
+                \item Built a Flutter mobile app for carbon offset purchases, \textbf{integrating Patch.io} to display ESG data by region.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
 
         \begin{twocolentry}{
             Jan 2023 – Aug 2024
         }
             \textbf{Software Engineering Intern}, IT Hired Guns Inc. -- Orlando, FL\end{twocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Published B2C cross-platform loyalty apps (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
+                \item Published \textbf{B2C cross-platform loyalty apps} (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
             \end{highlights}
         \end{onecolentry}
 
@@ -279,11 +278,11 @@
             \textbf{Scripted Survey Browser AI Agent,} \textit{CalHacks Prize Winner}
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Won sponsor prize at CalHacks — built agentic pipeline using Llama vision model to validate infrastructure damage photos and auto-submit repair requests to SF city government via Playwright browser automation.
-                \item Led team of 3, owned backend and CV pipeline; shipped working SF demo in 36 hours over an unfinished feature set.
+                \item \textbf{Won sponsor prize at CalHacks} — built agentic pipeline using Llama vision model to validate infrastructure damage photos and auto-submit repair requests to SF city government via Playwright browser automation.
+                \item Led team of 3, owned backend and CV pipeline; \textbf{shipped working SF demo in 36 hours} over an unfinished feature set.
             \end{highlights}
         \end{onecolentry}
 
@@ -293,11 +292,11 @@
             \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
         \end{extendedtwocolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Trained PPO quadruped policies in MuJoCo/Gymnasium; terrain-adapted policy achieves 2.1x reward (893$\pm$130 vs. 424$\pm$106) and 40\% lower fall rate than the flat-trained baseline on unseen terrain, validated across 10 matched seeds.
-                \item Built leg-amputation-robust specialist policies ($\sim$49x flat-baseline reward) and a compound policy router that switches checkpoints by damaged leg, beating any single policy across a 4-leg $\times$ 10-seed evaluation sweep.
+                \item Trained PPO quadruped policies in MuJoCo/Gymnasium; terrain-adapted policy achieves \textbf{2.1x reward (893$\pm$130 vs. 424$\pm$106)} and 40\% lower fall rate than the flat-trained baseline on unseen terrain, validated across 10 matched seeds per condition.
+                \item Built leg-amputation-robust specialist policies (\textbf{$\sim$49x flat-baseline reward}) and a compound policy router that switches checkpoints by damaged leg, beating any single policy across a 4-leg $\times$ 10-seed evaluation sweep.
             \end{highlights}
         \end{onecolentry}
 
@@ -307,7 +306,7 @@
             \textbf{Languages:} Python, Java, JavaScript, SQL, Dart, Scheme
         \end{onecolentry}
 
-        \vspace{0.07 cm}
+        \vspace{0.17 cm}
 
         \begin{onecolentry}
             \textbf{Technologies:} PyTorch, Transformers (BART), scikit-learn, Pandas, NLTK, spaCy, MuJoCo, Gymnasium, Stable-Baselines3, React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Git.
