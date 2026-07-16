@@ -206,7 +206,8 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Building a multi-stage PyTorch CV pipeline on 1000fps pile-driving footage — object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike — then converting pixel-space line displacement into inch/foot measurements via a depth map, automating a manual Department of Transportation pile depth submission process.
+                \item Building a multi-stage PyTorch CV pipeline to automate depth tracking when driving piles (foundational support for heavy structures, like bridges) into the ground — replacing a manual, hand-marked field process used for Department of Transportation compliance submissions.
+                \item Pipeline mechanism, on 1000fps pile-driving footage: object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike, then converting pixel-space line displacement into inch/foot measurements via a depth map.
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — directly informing model design decisions.
                 \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of markings.
             \end{highlights}
