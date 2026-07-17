@@ -193,7 +193,7 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item GPA: 3.9 | SAT: 1590
-                \item Courses: Probability \& Stochastic Processes, Machine Learning, Computer Security, Data Structures
+                \item Courses: Probability \& Stochastic Processes, Machine Learning, Computer Security, Data Structures, Macroeconomics
             \end{highlights}
         \end{onecolentry}
 
@@ -335,7 +335,7 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a FastAPI agent that audits and cleans an agent-first workspace (duplicate docs, stale-wrong docs, prompt-injection traps), acting as the user via the Scalekit SDK; every fix is a reversible move (quarantine, archive, permission-revoke), never a delete.
+                \item Built a FastAPI agent that compacts and cleans an agent-first workspace (duplicate docs, stale-wrong docs, prompt-injection traps) for downstream agents to ingest, acting as the user via the Scalekit SDK; every fix is a reversible move (quarantine, archive, permission-revoke), never a delete.
                 \item Designed a three-stage prompt-injection detection pipeline — regex prefilter, vector-similarity narrowing over Actian VectorAI embeddings, then LLM adjudication — with a fail-open fallback to regex-only detection if the LLM call fails, keeping live demos safe.
                 \item Engineered honest-by-construction fix reporting: each fix call returns whether the action actually executed against the live workspace or only updated the local audit index, so the UI never claims a success that didn't happen.
             \end{highlights}

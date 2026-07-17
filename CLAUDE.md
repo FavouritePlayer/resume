@@ -11,8 +11,9 @@ Arjun Nanduri — rising junior, UC Berkeley CS/CDSS, GPA 3.9, grad May 2028. Cu
 1. **`cv_master.tex`** — verbose superset, **as complete as possible.** Named `cv_` rather than `resume_` deliberately: it isn't a resume, it's never sent, and calling it one invited confusion. Every bullet, every project, every piece of real detail that exists should live here — full technical mechanism, real numbers, full history, no trimming for space. NO page limit, and none should ever be imposed on it. **Never sent out.** This is the reservoir every specialized profile cuts from. When a role needs a bullet that was trimmed from a profile, pull it from here instead of rewriting from memory. Keep it complete and current — anything true and relevant belongs in the master even if no profile currently uses it.
 2. **`resume_mle.tex`** — ONE PAGE. ML / CV emphasis. Sendable.
 3. **`resume_swe.tex`** — ONE PAGE. SWE / Founder emphasis. Sendable.
+4. **`resume_pm.tex`** — ONE PAGE. Product management emphasis. Sendable.
 
-These two (`_mle`, `_swe`) are the specialized profiles that exist today, not a hard ceiling — **more specialized profiles may be added later** (e.g. a data-science-specific cut, a new-grad full-time version, a role-specific one-off). Every specialized profile, current or future, follows the same rule: it is a filtered, reordered, one-page view of the master, never an independently drafted document.
+These profiles (`_mle`, `_swe`, `_pm`) are the specialized profiles that exist today, not a hard ceiling — **more specialized profiles may be added later** (e.g. a data-science-specific cut, a new-grad full-time version, a role-specific one-off). Every specialized profile, current or future, follows the same rule: it is a filtered, reordered, one-page view of the master, never an independently drafted document.
 
 **Duplication rule:** every specialized profile shares the SAME preamble structure, fonts, and macros as the master — the same packages, the same named environments (`highlights`, `twocolentry`, etc.), the same overall visual style. Each is a *filtered, reordered view* of the master's content — not an independently styled document. If a structural/mechanism change is made (a new environment, a font change, a different bullet style), apply it consistently across master + every specialized profile.
 
@@ -25,19 +26,22 @@ These two (`_mle`, `_swe`) are the specialized profiles that exist today, not a 
 
 ## One-page policy
 
-- **Every specialized profile is hard one page.** This applies to `_mle`, `_swe`, and any specialized profile added in the future — no exceptions. For an undergrad with no PhD, a multi-page applied/SWE resume reads as not knowing the convention; recruiters skim page one anyway. The one-page constraint is what forces the weak bullets out — that's the point.
+- **Every specialized profile is hard one page.** This applies to `_mle`, `_swe`, `_pm`, and any specialized profile added in the future — no exceptions. For an undergrad with no PhD, a multi-page applied/SWE resume reads as not knowing the convention; recruiters skim page one anyway. The one-page constraint is what forces the weak bullets out — that's the point.
 - **`cv_master.tex` is the opposite: intentionally unbounded and as verbose as possible.** It should contain everything — it's the superset, never sent, never trimmed for length. More detail in the master is always better; the page limit only applies once content is filtered into a specialized profile.
 - Compile and **visually verify** each specialized profile is actually one page before declaring it done. Do not trust line counts; read the rendered PDF.
 
-## The specialized profiles (currently two)
+## The specialized profiles (currently three)
 
 **`resume_mle.tex` — ML / CV — proves technical acumen.**
 Leads with depth signal: BART low-resource NLP work, Aver CV pipeline, `ant_sim` PPO/MuJoCo quadruped-locomotion project, PyTorch. Web/mobile history demoted to one line or cut. Top third of page one must surface ML signal (PyTorch, BART, CV, measurable results) above everything else.
 
 **`resume_swe.tex` — SWE / Founder — proves shipping.**
-Leads with PotBot (won CalHacks prize, led team of 3, shipped working SF demo in 36h over an unfinished feature set — the founder signal stated perfectly), plus two more recent hackathon agent projects (`DealScout` — resale-arbitrage agent, LangGraph/Playwright/HydraDB; `ContextCustodian` — workspace-hygiene agent, FastAPI/Scalekit), full-stack range, ownership/scoping decisions. Technical depth appears as supporting evidence, not the headline.
+Leads with PotBot (retitled to "PotBot — Civic Reporting Agent" so the title matches what the project actually does — it validates infrastructure damage photos and auto-submits repair requests to SF city government, not a "survey browser"; won CalHacks prize, led team of 3, shipped working SF demo in 36h over an unfinished feature set — the founder signal stated perfectly), plus `DealScout` (resale-arbitrage agent) and `ContextCustodian` (workspace-hygiene agent) condensed to one bullet each — sponsor-specific tech names (HydraDB, Scalekit) were dropped since they're not real engineering decisions, keeping only the portable skill/judgment each bullet demonstrates. `ant_sim` (Quadruped Locomotion with PPO) also lives here now, reframed around testing discipline (automated regression-test suite, multi-seed replication) rather than RL metrics, so it reads as engineering rigor rather than a second technical-depth headline competing with `resume_mle.tex`.
 
-Same facts in both — different ordering, emphasis, and which bullets are included. Travel Tracker Web App and the Chinese Web Novel Translator were cut from the one-pagers to make room for these (still live in full in `cv_master.tex` — pull them back if a specific role calls for them).
+**`resume_pm.tex` — Product Management — proves product judgment.**
+Targets PM internships (fintech, e.g. Capital One). Governing principle: PM resumes emphasize leadership, user contact, decisions under uncertainty, and impact — not languages or features implemented, so the same underlying project is re-emphasized rather than re-invented. Metrics are kept but reattached to decisions, not implementations. Aver's field-interview bullet (user research directly changing model design decisions) leads Experience — it's the single strongest PM line available and was previously buried second. PotBot leads Projects, framed around the scoping call (ship a working demo over an unfinished feature set under a 36-hour deadline) rather than the CV mechanism. `ant_sim` leads with the negative-result story (validated a leg-damage policy, found it didn't transfer, killed that direction and built a router instead of shipping an unsupported claim) and keeps the 2.1x terrain-adaptation result as the supporting number, not the headline — "killing a direction on evidence" is the product-judgment signal, not the reward multiplier. `DealScout`/`ContextCustodian` are one line each (engineering-depth signal, lower product signal) — first in line to cut if a future edit needs the space. Adds ECON 101B (Macroeconomics) to Courses for fintech relevance. Skills demoted to the bottom and shortened (narrow RL-specific tools dropped) since a technical PM signal is a supporting asset here, not the headline.
+
+Same facts across all three — different ordering, emphasis, and which bullets are included. Travel Tracker Web App and the Chinese Web Novel Translator are cut from all three one-pagers (still live in full in `cv_master.tex` — pull them back if a specific role calls for them).
 
 ## Near-term target
 
@@ -51,6 +55,16 @@ Self-understanding to respect: *Founder = shipping, not technical depth. But dep
 
 - **ORACC corpus scale** (`cv_master.tex`, CDSS bullet) is a published ORACC-wide estimate ($\sim$1M words / $\sim$10K texts), not verified against Arjun's specific fine-tuning subset — flagged with a `% TODO(Arjun)` comment in the master `.tex`. Confirm before this number goes out on a profile that hasn't been checked against it.
 - **DealScout / ContextCustodian** have no quantified outcome metric (no eval numbers, no before/after) — bullets sell the mechanism and engineering judgment, not a result. Don't force a fake metric onto either.
+
+## Traceability rule (hard requirement)
+
+**Every bullet on every specialized profile must trace to real content in `cv_master.tex`.** Reframing, reordering, compressing, and merging two real bullets into one are all fine — inventing a fact, a qualifier, or a characterization that isn't in the source is not, even if it sounds plausible or is individually minor (a single invented adjective is enough to break this — see the "personalized" incident below).
+
+- If a profile needs a rewritten framing (e.g. leading with a decision instead of a mechanism, recasting an ML metric as a product-judgment story), do the reframing — but the underlying facts, numbers, and claims must still be the ones already in the master. Don't add a new specific (a client characterization, a causal claim, a descriptive word) that isn't already stated or directly derivable from the master text.
+- If a specialized profile needs content the master doesn't have, either (a) pull it from the master's fuller version of that same bullet if one exists, or (b) **ask the user rather than writing something plausible.** Do not fill a gap with an invented-but-reasonable-sounding detail.
+- If a reframing gets explicitly approved for one profile (e.g. a rewritten project description), consider updating `cv_master.tex` to match, so the framing has a real source and every future profile can trace to it cleanly — don't leave the master as the only un-updated, stale version.
+- **After any edit to a specialized profile that touches bullet wording, diff every changed bullet against its source in `cv_master.tex`** before considering the edit done. This isn't optional cleanup — a resume with one invented fact is a real risk (interview questions probe specifics; recruiters cross-check), not a style nitpick.
+- Real incident this rule exists because of: a rewrite of `resume_pm.tex`'s IT Hired Guns bullet changed master's "dynamic updates on nearby stations, fuel prices, and offers" to "personalized offers on nearby stations and fuel prices" — "personalized" was never stated anywhere and wasn't caught until an explicit audit. Small, plausible-sounding word substitutions are exactly what this rule is meant to catch.
 
 ## Phrasing principles
 

@@ -4,11 +4,12 @@ LaTeX source for Arjun Nanduri's resume. See `CLAUDE.md` for the content strateg
 
 ## Files
 
-- `cv_master.tex` — verbose superset, every bullet, no page limit. Never sent out; the reservoir the other two are cut from. Named `cv_` rather than `resume_` since it's not a resume at all — it's the unbounded reference document.
+- `cv_master.tex` — verbose superset, every bullet, no page limit. Never sent out; the reservoir the specialized profiles are cut from. Named `cv_` rather than `resume_` since it's not a resume at all — it's the unbounded reference document.
 - `resume_mle.tex` — one-page, ML/CV-emphasis. Sendable.
 - `resume_swe.tex` — one-page, SWE/Founder-emphasis. Sendable.
+- `resume_pm.tex` — one-page, Product Management-emphasis. Sendable.
 
-All three share the same preamble/macros — content differs, formatting does not.
+All four share the same preamble/macros (though margins/spacing are tuned per profile) — content differs, formatting mechanism does not.
 
 ## Setup: LaTeX + VS Code rendering (macOS)
 
@@ -64,7 +65,7 @@ cd "<path to Resume repo>"
 latexmk -pdf -aux-directory=.build -emulate-aux-dir -interaction=nonstopmode resume_mle.tex
 ```
 
-Should produce a 1-page `resume_mle.pdf` in the repo root with no errors. The `-aux-directory=.build` flag keeps `.aux`/`.log`/`.fls`/etc. out of the root directory entirely (tucked into a gitignored `.build/` folder) instead of cluttering `ls`/Finder. Same command applies to `resume_swe.tex`; `cv_master.tex` has no page-count requirement. VS Code's LaTeX Workshop is already configured (see `.vscode/settings.json`) to build the same way.
+Should produce a 1-page `resume_mle.pdf` in the repo root with no errors. The `-aux-directory=.build` flag keeps `.aux`/`.log`/`.fls`/etc. out of the root directory entirely (tucked into a gitignored `.build/` folder) instead of cluttering `ls`/Finder. Same command applies to `resume_swe.tex` and `resume_pm.tex`; `cv_master.tex` has no page-count requirement. VS Code's LaTeX Workshop is already configured (see `.vscode/settings.json`) to build the same way.
 
 ### 8. Use it in VS Code
 
