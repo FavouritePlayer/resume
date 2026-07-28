@@ -296,7 +296,7 @@
         \begin{extendedtwocolentry}{
             \href{https://github.com/FavouritePlayer/ant_sim}{github.com/FavouritePlayer/ant\_sim}
         }
-            \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, Stable-Baselines3)
+            \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
         \end{extendedtwocolentry}
 
         \vspace{0.10 cm}
@@ -307,6 +307,19 @@
                 \item Leg-damage robustness: a specialist policy trained with one leg permanently amputated reaches $\sim$49x the flat-baseline reward (2148$\pm$749 vs. 44$\pm$37) with 20\% vs. 100\% fall rate on that leg; documented that the policy does not transfer to other legs (100\% fall).
                 \item Built a compound policy router that switches checkpoints by which leg is amputated, beating any single policy (836$\pm$909 vs. 497$\pm$737 mean reward, 78\% vs. 90\% fall rate) across a 4-leg $\times$ 10-seed evaluation sweep.
                 \item Validated all headline results via multi-seed training replication and an automated regression test suite; generated comparison videos for each experiment.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/face-morpher}{github.com/FavouritePlayer/face-morpher}
+        }
+            \textbf{Face Morpher — From-Scratch Warping} (NumPy, dlib, scipy)
+        \end{extendedtwocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Implemented per-triangle affine solve (3-point correspondence $\rightarrow$ 2$\times$3 matrix), inverse warping with bilinear interpolation, and piecewise Delaunay-triangle warping to produce morphs and mean faces; NumPy for all core geometry, dlib for landmark correspondence, scipy for triangulation, OpenCV for I/O and polygon masking only.
             \end{highlights}
         \end{onecolentry}
 
