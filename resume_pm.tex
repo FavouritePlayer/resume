@@ -73,9 +73,9 @@
 \newenvironment{highlights}{
     \begin{itemize}[
         topsep=0.3 cm,
-        parsep=0.06 cm,
+        parsep=0.075 cm,
         partopsep=0pt,
-        itemsep=0.025 cm,
+        itemsep=0.035 cm,
         leftmargin=0 cm + 10pt
     ]
 }{
@@ -189,7 +189,7 @@
         }
             \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item GPA: 3.9 | SAT: 1590
@@ -203,7 +203,7 @@
         }
             \textbf{Machine Learning Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — \textbf{directly changed model design decisions}.
@@ -212,14 +212,14 @@
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
 
         \begin{twocolentry}{
             May 2025 – Aug 2025
         }
             \textbf{Software Engineering Intern}, CACI International Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a full-stack logistics web app for \textbf{U.S. Customs field officers} using Angular, Spring Boot, and PostgreSQL.
@@ -228,48 +228,19 @@
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
 
         \begin{twocolentry}{
             Jan 2025 – May 2025
         }
             \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
                 \item Fine-tuned a BART transformer for low-resource NLP, \textbf{beating open-source baselines by 15\%}.
-            \end{highlights}
-        \end{onecolentry}
-
-        \vspace{0.115 cm}
-
-        \begin{twocolentry}{
-            Sep 2024 – Dec 2024
-        }
-            \textbf{Software Engineering Intern}, Floras -- Berkeley, CA\end{twocolentry}
-
-        \vspace{0.115 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item \textbf{Analyzed user engagement metrics} to inform product decisions.
-                \item Built a Flutter mobile app for carbon offset purchases, \textbf{integrating Patch.io} to display ESG data by region.
-            \end{highlights}
-        \end{onecolentry}
-
-        \vspace{0.115 cm}
-
-        \begin{twocolentry}{
-            Jan 2023 – Aug 2024
-        }
-            \textbf{Software Engineering Intern}, IT Hired Guns Inc. -- Orlando, FL\end{twocolentry}
-
-        \vspace{0.115 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Published \textbf{B2C cross-platform loyalty apps} (e.g., HotSpot, Kenjo) for unbranded gas stations using Flutter.
-                \item Integrated location services and backend APIs to deliver \textbf{dynamic updates} on nearby stations, fuel prices, and offers.
+                \item Owned the data pipeline for a $\sim$1M-word, $\sim$10K-text raw corpus — preprocessing and alignment work that \textbf{had to be right before any model result was credible}.
             \end{highlights}
         \end{onecolentry}
 
@@ -281,7 +252,7 @@
             \textbf{PotBot — Civic Reporting Agent,} \textit{CalHacks Prize Winner}
         \end{extendedtwocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Led a team of 3 under a 36-hour hackathon deadline, \textbf{prioritizing a working demo over an unfinished feature set} — shipped an agentic pipeline (Llama vision, Playwright) that auto-submits real infrastructure repair requests to SF city government, winning CalHacks' sponsor prize.
@@ -294,7 +265,7 @@
             \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
         \end{extendedtwocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Validated a leg-damage-specialist policy across multiple seeds and found it didn't transfer to other legs (100\% fall rate) — \textbf{killed that direction rather than ship an unsupported claim}, building a compound policy router instead.
@@ -308,7 +279,7 @@
             \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
         \end{extendedtwocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment, then restricted image-attachment to post-filter candidates to \textbf{avoid a $\sim$4x blowup in scan time}.
@@ -321,10 +292,23 @@
             \textbf{Context Custodian — Workspace Hygiene Agent} (FastAPI)
         \end{extendedtwocolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a FastAPI agent that compacts and cleans an agent-first workspace for downstream agents to ingest — a three-stage prompt-injection detection pipeline (regex, vector similarity, LLM adjudication) with a fail-open fallback, where \textbf{every fix is a reversible move, never a delete}.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/face-morpher}{github.com/FavouritePlayer/face-morpher}
+        }
+            \textbf{Face Morpher — From-Scratch Warping} (NumPy, dlib, scipy)
+        \end{extendedtwocolentry}
+
+        \vspace{0.175 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Chose to implement image warping from scratch in NumPy — affine solve, inverse mapping, bilinear interpolation — instead of relying on OpenCV's built-in warp, \textbf{restricting OpenCV to I/O only} to own geometric precision outright.
             \end{highlights}
         \end{onecolentry}
 
@@ -334,7 +318,7 @@
             \textbf{Languages:} Python, Java, JavaScript, SQL
         \end{onecolentry}
 
-        \vspace{0.115 cm}
+        \vspace{0.175 cm}
 
         \begin{onecolentry}
             \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, AWS, PyTorch, Git
