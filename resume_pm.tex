@@ -189,7 +189,7 @@
         }
             \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item GPA: 3.9 | SAT: 1590
@@ -203,43 +203,42 @@
         }
             \textbf{Machine Learning Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — \textbf{directly changed model design decisions}.
+                \item Field interviews with construction workers surfaced two constraints — LIDAR was cost-prohibitive under thin project margins, and workers frequently crossed the camera's line of sight — so filmed pile strikes at 1000fps (tripod-mounted black-and-white camera, Jetson Orin GPU, tracking chalk markings and LED strips) to capture both drive-down and rebound height for field engineers; \textbf{chose CV over LIDAR for cost-effectiveness}.
                 \item Building a multi-stage PyTorch CV pipeline to automate depth tracking when driving piles (foundational support for heavy structures, like bridges) into the ground — \textbf{replacing a manual, hand-marked DOT compliance process}.
-                \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, \textbf{Phase 2 LIDAR elimination of markings}.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
 
         \begin{twocolentry}{
             May 2025 – Aug 2025
         }
             \textbf{Software Engineering Intern}, CACI International Inc. -- Virginia\end{twocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a full-stack logistics web app for \textbf{U.S. Customs field officers} using Angular, Spring Boot, and PostgreSQL.
                 \item Expanded database test coverage \textbf{by 20\%}, enhancing system stability and enabling more efficient bug detection.
-                \item \textbf{Ramped quickly onto unfamiliar enterprise Spring Boot codebase} in Agile team, contributing through sprint planning, standups, and code reviews.
+                \item Ramped onto a large, unfamiliar Spring Boot codebase fast enough to \textbf{pick up frontend bug tickets and a backend bug-fix story}, contributing through sprint planning, standups, and code reviews in an Agile team.
             \end{highlights}
         \end{onecolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
 
         \begin{twocolentry}{
             Jan 2025 – May 2025
         }
             \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
-                \item Fine-tuned a BART transformer for low-resource NLP, \textbf{beating open-source baselines by 15\%}.
+                \item Fine-tuned a BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using a custom edit-distance metric.
                 \item Owned the data pipeline for a $\sim$1M-word, $\sim$10K-text raw corpus — preprocessing and alignment work that \textbf{had to be right before any model result was credible}.
             \end{highlights}
         \end{onecolentry}
@@ -252,7 +251,7 @@
             \textbf{PotBot — Civic Reporting Agent,} \textit{CalHacks Prize Winner}
         \end{extendedtwocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Led a team of 3 under a 36-hour hackathon deadline, \textbf{prioritizing a working demo over an unfinished feature set} — shipped an agentic pipeline (Llama vision, Playwright) that auto-submits real infrastructure repair requests to SF city government, winning CalHacks' sponsor prize.
@@ -265,11 +264,11 @@
             \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
         \end{extendedtwocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Validated a leg-damage-specialist policy across multiple seeds and found it didn't transfer to other legs (100\% fall rate) — \textbf{killed that direction rather than ship an unsupported claim}, building a compound policy router instead.
-                \item Terrain-adapted policy, validated across 10 matched seeds, \textbf{achieved 2.1x the flat-baseline reward} on unseen terrain — the approach that shipped.
+                \item Validated a leg-damage-specialist policy across multiple seeds and found it didn't transfer to other legs (100\% fall rate) — \textbf{killed that direction rather than ship an unsupported claim} — then built a compound policy router that beat any single policy (836 vs. 497 mean reward) across a 4-leg $\times$ 10-seed evaluation sweep.
+                \item Terrain-adapted policy, validated across 10 matched seeds, \textbf{achieved 2.1x the flat-baseline reward} (893 vs. 424) and 40\% lower fall rate on unseen terrain — the approach that shipped.
             \end{highlights}
         \end{onecolentry}
 
@@ -279,7 +278,7 @@
             \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
         \end{extendedtwocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment, then restricted image-attachment to post-filter candidates to \textbf{avoid a $\sim$4x blowup in scan time}.
@@ -292,23 +291,10 @@
             \textbf{Context Custodian — Workspace Hygiene Agent} (FastAPI)
         \end{extendedtwocolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a FastAPI agent that compacts and cleans an agent-first workspace for downstream agents to ingest — a three-stage prompt-injection detection pipeline (regex, vector similarity, LLM adjudication) with a fail-open fallback, where \textbf{every fix is a reversible move, never a delete}.
-            \end{highlights}
-        \end{onecolentry}
-
-        \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/face-morpher}{github.com/FavouritePlayer/face-morpher}
-        }
-            \textbf{Face Morpher — From-Scratch Warping} (NumPy, dlib, scipy)
-        \end{extendedtwocolentry}
-
-        \vspace{0.175 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Chose to implement image warping from scratch in NumPy — affine solve, inverse mapping, bilinear interpolation — instead of relying on OpenCV's built-in warp, \textbf{restricting OpenCV to I/O only} to own geometric precision outright.
             \end{highlights}
         \end{onecolentry}
 
@@ -318,7 +304,7 @@
             \textbf{Languages:} Python, Java, JavaScript, SQL
         \end{onecolentry}
 
-        \vspace{0.175 cm}
+        \vspace{0.19 cm}
 
         \begin{onecolentry}
             \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, AWS, PyTorch, Git
