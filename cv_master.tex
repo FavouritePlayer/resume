@@ -209,6 +209,8 @@
                 \item Building a multi-stage PyTorch CV pipeline to automate depth tracking when driving piles (foundational support for heavy structures, like bridges) into the ground — replacing a manual, hand-marked field process used for Department of Transportation compliance submissions.
                 \item Pipeline mechanism, on 1000fps pile-driving footage: object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike, then converting pixel-space line displacement into inch/foot measurements via a depth map.
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — directly informing model design decisions.
+                \item Field interviews also surfaced that a LIDAR-based measurement approach was cost-prohibitive given the project's thin margins, and that workers frequently crossed the camera's line of sight during recording — informed the decision to pursue a CV-based approach over LIDAR for cost-effectiveness.
+                \item Recording setup: tripod-mounted black-and-white camera filming at 1000fps on a Jetson Orin GPU, capturing both painted chalk depth markings and LED strips, to measure both pile drive-down and rebound height (rebound height needed by field engineers).
                 \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, Phase 2 LIDAR elimination of markings.
             \end{highlights}
         \end{onecolentry}
@@ -223,9 +225,9 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Built a full-stack web app for U.S. Customs field officers using Angular, Spring Boot, and PostgreSQL.
+                \item Built a full-stack logistics web app for U.S. Customs field officers using Angular, Spring Boot, and PostgreSQL.
                 \item Expanded database test coverage by 20\%, enhancing system stability and enabling more efficient bug detection.
-                \item Ramped quickly onto unfamiliar enterprise Spring Boot codebase in Agile team, contributing through sprint planning, standups, and code reviews.
+                \item Ramped onto a large, unfamiliar Spring Boot codebase fast enough to pick up frontend bug tickets and a backend bug-fix story, contributing through sprint planning, standups, and code reviews in an Agile team.
             \end{highlights}
         \end{onecolentry}
 
