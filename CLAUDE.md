@@ -12,8 +12,9 @@ Arjun Nanduri — rising junior, UC Berkeley CS/CDSS, GPA 3.9, grad May 2028. Cu
 2. **`resume_mle.tex`** — ONE PAGE. ML / CV emphasis. Sendable.
 3. **`resume_swe.tex`** — ONE PAGE. SWE / Founder emphasis. Sendable.
 4. **`resume_pm.tex`** — ONE PAGE. Product management emphasis. Sendable.
+5. **`resume_research.tex`** — ONE PAGE. Academic/research emphasis. Sendable.
 
-These profiles (`_mle`, `_swe`, `_pm`) are the specialized profiles that exist today, not a hard ceiling — **more specialized profiles may be added later** (e.g. a data-science-specific cut, a new-grad full-time version, a role-specific one-off). Every specialized profile, current or future, follows the same rule: it is a filtered, reordered, one-page view of the master, never an independently drafted document.
+These profiles (`_mle`, `_swe`, `_pm`, `_research`) are the specialized profiles that exist today, not a hard ceiling — **more specialized profiles may be added later** (e.g. a data-science-specific cut, a new-grad full-time version, a role-specific one-off). Every specialized profile, current or future, follows the same rule: it is a filtered, reordered, one-page view of the master, never an independently drafted document.
 
 **Duplication rule:** every specialized profile shares the SAME preamble structure, fonts, and macros as the master — the same packages, the same named environments (`highlights`, `twocolentry`, etc.), the same overall visual style. Each is a *filtered, reordered view* of the master's content — not an independently styled document. If a structural/mechanism change is made (a new environment, a font change, a different bullet style), apply it consistently across master + every specialized profile.
 
@@ -26,11 +27,11 @@ These profiles (`_mle`, `_swe`, `_pm`) are the specialized profiles that exist t
 
 ## One-page policy
 
-- **Every specialized profile is hard one page.** This applies to `_mle`, `_swe`, `_pm`, and any specialized profile added in the future — no exceptions. For an undergrad with no PhD, a multi-page applied/SWE resume reads as not knowing the convention; recruiters skim page one anyway. The one-page constraint is what forces the weak bullets out — that's the point.
+- **Every specialized profile is hard one page.** This applies to `_mle`, `_swe`, `_pm`, `_research`, and any specialized profile added in the future — no exceptions. For an undergrad with no PhD, a multi-page applied/SWE resume reads as not knowing the convention; recruiters skim page one anyway. The one-page constraint is what forces the weak bullets out — that's the point.
 - **`cv_master.tex` is the opposite: intentionally unbounded and as verbose as possible.** It should contain everything — it's the superset, never sent, never trimmed for length. More detail in the master is always better; the page limit only applies once content is filtered into a specialized profile.
 - Compile and **visually verify** each specialized profile is actually one page before declaring it done. Do not trust line counts; read the rendered PDF.
 
-## The specialized profiles (currently three)
+## The specialized profiles (currently four)
 
 **`resume_mle.tex` — ML / CV — proves technical acumen.**
 Leads with depth signal: BART low-resource NLP work, Aver CV pipeline, `ant_sim` PPO/MuJoCo quadruped-locomotion project, PyTorch. Web/mobile history demoted to one line or cut. Top third of page one must surface ML signal (PyTorch, BART, CV, measurable results) above everything else.
@@ -41,7 +42,10 @@ Leads with PotBot (retitled to "PotBot — Civic Reporting Agent" so the title m
 **`resume_pm.tex` — Product Management — proves product judgment.**
 Targets PM internships (fintech, e.g. Capital One). Governing principle: PM resumes emphasize leadership, user contact, decisions under uncertainty, and impact — not languages or features implemented, so the same underlying project is re-emphasized rather than re-invented. Metrics are kept but reattached to decisions, not implementations. Aver's field-interview bullet (user research directly changing model design decisions) leads Experience — it's the single strongest PM line available and was previously buried second. PotBot leads Projects, framed around the scoping call (ship a working demo over an unfinished feature set under a 36-hour deadline) rather than the CV mechanism. `ant_sim` leads with the negative-result story (validated a leg-damage policy, found it didn't transfer, killed that direction and built a router instead of shipping an unsupported claim) and keeps the 2.1x terrain-adaptation result as the supporting number, not the headline — "killing a direction on evidence" is the product-judgment signal, not the reward multiplier. `DealScout`/`ContextCustodian` are one line each (engineering-depth signal, lower product signal) — first in line to cut if a future edit needs the space. Adds ECON 101B (Macroeconomics) to Courses for fintech relevance. Skills demoted to the bottom and shortened (narrow RL-specific tools dropped) since a technical PM signal is a supporting asset here, not the headline.
 
-Same facts across all three — different ordering, emphasis, and which bullets are included. Travel Tracker Web App and the Chinese Web Novel Translator are cut from all three one-pagers (still live in full in `cv_master.tex` — pull them back if a specific role calls for them).
+**`resume_research.tex` — Academic / Research — proves research aptitude.**
+Filtered from the master by relevance to formal research/methodology, not by role or company. In: CDSS (the only formal academic research position — full 3-bullet detail: result, data-engineering-for-research, leadership/dissemination), Publications (all 3 real DOI-linked papers — rare for an undergrad, proves he can carry work through to publication even though the domain is medical, not CS), `ant_sim` (full detail — the strongest personal-project research-methodology signal available: baseline-vs-treatment comparisons, multi-seed statistical validation, an honestly-reported negative result, reproducibility infrastructure), and Face Morpher (from-scratch algorithm implementation, proving CV fundamentals depth for the Fall 2026 CV-research target). Aver is included but trimmed to the problem+mechanism+field-research bullets only (the roadmap bullet is cut as the most product-flavored, least research-flavored line). Everything with no research/methodology angle — CACI, Floras, IT Hired Guns, PotBot, DealScout, ContextCustodian, Travel Tracker, Chinese Web Novel Translator, Job Skills Analysis — is cut entirely, not just demoted; a research resume diluted with unrelated hackathon/product work reads as unfocused. Skills trimmed to the ML/RL/CV/research stack only (web/mobile stack dropped). Section is "Research Experience" / "Research Projects" rather than generic "Experience"/"Projects" to keep the framing explicit throughout.
+
+Same facts across all four — different ordering, emphasis, and which bullets are included. Travel Tracker Web App and the Chinese Web Novel Translator are cut from all four one-pagers (still live in full in `cv_master.tex` — pull them back if a specific role calls for them).
 
 ## Near-term target
 

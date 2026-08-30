@@ -1,0 +1,284 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=1.27 cm, % seperation between body and page edge from the top
+    bottom=1.27 cm, % seperation between body and page edge from the bottom
+    left=1.6 cm, % seperation between body and page edge from the left
+    right=1.6 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+    % showframe % for debugging
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Arjun's CV},
+    pdfauthor={Arjun Nanduri},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.15 cm
+}{
+    % bottom space:
+    0.18 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.3 cm,
+        parsep=0.05 cm,
+        partopsep=0pt,
+        itemsep=0.02 cm,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.15 cm,
+        parsep=0.12 cm,
+        partopsep=0pt,
+        itemsep=0.02 cm,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{extendedtwocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 8 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        \fontsize{15 pt}{15 pt}\selectfont Arjun Nanduri
+
+        \vspace{0.5 pt}
+
+        \normalsize
+        \mbox{Berkeley, CA}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:arjunnanduri@gmail.com}{arjunnanduri@gmail.com}}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+1-407-580-8788}{(407)-580-8788}}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/arjunnanduri}{linkedin.com/in/arjunnanduri}}%
+        \kern 2.0 pt%
+        \AND%
+        \kern 2.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/FavouritePlayer}{github.com/FavouritePlayer}}%
+
+    \end{header}
+
+    \section{Education}
+
+        \begin{twocolentry}{
+            Expected May 2028
+        }
+            \textbf{University of California: Berkeley}, BA in Computer Science\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: 3.9 | SAT: 1590
+                \item Courses: Probability \& Stochastic Processes, Machine Learning, Computer Security, Data Structures
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Research Experience}
+        \begin{twocolentry}{
+            Jan 2025 – May 2025
+        }
+            \textbf{Data Science Research Intern}, CDSS, UC Berkeley -- Berkeley, CA\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using a custom edit-distance metric over lemma forms.
+                \item Built preprocessing and alignment pipelines for structured linguistic data from ORACC's cuneiform corpus (\textbf{$\sim$1M annotated words across $\sim$10K texts}).
+                \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+
+        \begin{twocolentry}{
+            Aug 2025 – Present
+        }
+            \textbf{Machine Learning Engineer}, Aver Technologies Inc. -- Virginia\end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Building a multi-stage PyTorch CV pipeline to automate depth tracking when driving piles (foundational support for heavy structures, like bridges) into the ground — \textbf{replacing a manual, hand-marked DOT compliance process}.
+                \item Pipeline mechanism, on 1000fps footage: object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector, and audio-visual synchronization to isolate each hammer strike, \textbf{converting pixel-space line displacement into inch/foot measurements} via a depth map.
+                \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — \textbf{directly informing model design decisions}.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Research Projects}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/ant_sim}{github.com/FavouritePlayer/ant\_sim}
+        }
+            \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
+        \end{extendedtwocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Trained PPO quadruped policies in MuJoCo/Gymnasium, benchmarking flat-ground baselines against terrain-adapted and damage-robust variants across \textbf{10 matched random seeds per condition}.
+                \item Terrain adaptation: policy trained on randomized heightfields achieves \textbf{2.1x the reward (893$\pm$130 vs. 424$\pm$106)} and 40\% lower fall rate than the flat-trained baseline on unseen rough terrain.
+                \item Leg-damage robustness: a specialist policy reaches $\sim$49x the flat-baseline reward on that leg but \textbf{does not transfer to other legs (100\% fall)} — documented as a negative result rather than shipped as an unsupported claim.
+                \item Built a compound policy router that switches checkpoints by damaged leg, beating any single policy across a 4-leg $\times$ 10-seed evaluation sweep; \textbf{validated via multi-seed replication and an automated regression-test suite}.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/face-morpher}{github.com/FavouritePlayer/face-morpher}
+        }
+            \textbf{Face Morpher — From-Scratch Warping} (NumPy, dlib, scipy)
+        \end{extendedtwocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Implemented per-triangle affine solve (3-point correspondence $\rightarrow$ 2$\times$3 matrix), inverse warping with bilinear interpolation, and piecewise Delaunay-triangle warping to produce morphs and mean faces; \textbf{all core geometry self-implemented in NumPy}, OpenCV limited to I/O and masking.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Publications}
+
+        \begin{onecolentry}
+            \begin{highlights}
+                \item \textbf{Scoping Review of PTSD Treatments for Natural Disaster Survivors,} \textit{Dec 2023}, Arjun Nanduri, et al., doi: \href{https://doi.org/10.52965/001c.89642}{10.52965/001c.89642}
+                \item \textbf{Triquetrum Fracture with Pisiform Dislocation,} \textit{Mar 2022}, Arjun Nanduri, et al., doi: \href{https://doi.org/10.52965/001c.32339}{10.52965/001c.32339}
+                \item \textbf{Baker's Cyst,} \textit{Dec 2021}, Arjun Nanduri, et al., doi: \href{https://doi.org/10.7759/cureus.20403}{10.7759/cureus.20403}
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Skills}
+
+        \begin{onecolentry}
+            \textbf{Languages:} Python, SQL
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+
+        \begin{onecolentry}
+            \textbf{Technologies:} PyTorch, Transformers (BART), scikit-learn, Pandas, NLTK, spaCy, MuJoCo, Gymnasium, Stable-Baselines3, NumPy, dlib, scipy, Git
+        \end{onecolentry}
+
+\end{document}
