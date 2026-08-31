@@ -222,15 +222,32 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item Building a multi-stage PyTorch CV pipeline to automate depth tracking when driving piles (foundational support for heavy structures, like bridges) into the ground — \textbf{replacing a manual, hand-marked DOT compliance process}.
-                \item Pipeline mechanism, on 1000fps pile-driving footage: object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike, then \textbf{converting pixel-space line displacement into inch/foot measurements} via a depth map.
+                \item Trained a CV pipeline for \textbf{real-time pile depth tracking} — object detection to localize the pile, YOLO segmentation and line detection to track painted depth markings, an open-source digit detector to identify line numbers, and audio-visual synchronization to isolate each hammer strike, converting pixel-space line displacement into inch/foot measurements via a depth map.
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — \textbf{directly informing model design decisions}.
                 \item Field interviews also surfaced that a LIDAR-based measurement approach was cost-prohibitive given the project's thin margins, and that workers frequently crossed the camera's line of sight during recording — \textbf{informed the decision to pursue a CV-based approach over LIDAR} for cost-effectiveness.
-                \item Designed proposed capture setup (patent filing in progress): tripod-mounted black-and-white camera at 1000fps on a Jetson Orin GPU, capturing painted chalk markings and LED strips to \textbf{measure pile drive-down and rebound height}.
+                \item \textbf{Helped file a provisional patent}, designing a tripod-mounted 1000fps camera and Jetson Orin GPU capture rig.
                 \item Designing two-phase roadmap: Phase 1 CV digitization of manual process, \textbf{Phase 2 LIDAR elimination of markings}.
             \end{highlights}
         \end{onecolentry}
 
     \section{Projects}
+
+        \begin{extendedtwocolentry}{
+            \href{https://github.com/FavouritePlayer/ant_sim}{github.com/FavouritePlayer/ant\_sim}
+        }
+            \textbf{Quadruped Locomotion with PPO} (MuJoCo, Gymnasium, SB3)
+        \end{extendedtwocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Trained PPO quadruped policies in MuJoCo/Gymnasium, benchmarking flat-ground baselines against terrain-adapted and damage-robust variants across \textbf{10 matched random seeds per condition}.
+                \item Terrain adaptation: policy trained on randomized heightfields \textbf{achieves 2.1x the reward} (893 vs. 424) and 40\% lower fall rate than the flat-trained baseline on unseen rough terrain.
+                \item Leg-damage robustness: a specialist policy trained with one leg permanently amputated reaches $\sim$49x the flat-baseline reward on that leg, but \textbf{does not transfer to other legs} (100\% fall rate).
+                \item Built a compound policy router that switches checkpoints by damaged leg, \textbf{beating any single policy} (836 vs. 497 mean reward) across a 4-leg $\times$ 10-seed evaluation sweep.
+                \item Validated all headline results via \textbf{multi-seed training replication and an automated regression test suite}; generated comparison videos for each experiment.
+            \end{highlights}
+        \end{onecolentry}
 
         \begin{extendedtwocolentry}{
             \href{https://github.com/FavouritePlayer/face-morpher}{github.com/FavouritePlayer/face-morpher}
@@ -245,33 +262,6 @@
             \end{highlights}
         \end{onecolentry}
 
-        \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/ContextCustodian}{github.com/FavouritePlayer/ContextCustodian}
-        }
-            \textbf{Context Custodian — Workspace Hygiene Agent} (FastAPI)
-        \end{extendedtwocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Designed a three-stage prompt-injection detection pipeline — regex prefilter, vector-similarity narrowing, then LLM adjudication — with a \textbf{fail-open fallback to regex-only detection} if the LLM call fails, keeping live demos safe.
-                \item Engineered honest-by-construction fix reporting: each fix call returns whether the action \textbf{actually executed live or only updated the local audit index}, so the UI never claims a success that didn't happen.
-            \end{highlights}
-        \end{onecolentry}
-
-        \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/DealScout}{github.com/FavouritePlayer/DealScout}
-        }
-            \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
-        \end{extendedtwocolentry}
-
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Built a LangGraph-orchestrated agent that scores resale value with \textbf{deterministic arithmetic kept separate from LLM judgment} to avoid hallucinated pricing, then filters and ranks candidates through a structured-output LLM call.
-            \end{highlights}
-        \end{onecolentry}
-
     \section{Skills}
 
         \begin{onecolentry}
@@ -281,7 +271,7 @@
         \vspace{0.10 cm}
 
         \begin{onecolentry}
-            \textbf{Technologies:} PyTorch, Transformers (BART), NLTK, spaCy, NumPy, dlib, scipy, LangGraph, FastAPI, Playwright, Git
+            \textbf{Technologies:} PyTorch, MuJoCo, Gymnasium, Stable-Baselines3, NumPy, dlib, scipy, Git
         \end{onecolentry}
 
 \end{document}

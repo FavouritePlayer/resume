@@ -222,9 +222,9 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item Building a multi-stage PyTorch CV pipeline to automate depth tracking when driving piles (foundational support for heavy structures, like bridges) into the ground — \textbf{replacing a manual, hand-marked DOT compliance process}.
-                \item Pipeline processes \textbf{1000fps} pile-driving footage — YOLO detection and segmentation to track painted depth markings, audio-visual sync to isolate hammer strikes, and depth-map pixel-to-real-world conversion.
+                \item Trained a CV pipeline for \textbf{real-time pile depth tracking} — YOLO detection and segmentation to track painted depth markings, audio-visual sync to isolate hammer strikes, and depth-map pixel-to-real-world conversion.
                 \item Conducted field interviews with construction workers to surface real-world constraints — inconsistent hand-drawn markings, Spanish-speaking workforce — \textbf{directly informing model design decisions}.
-                \item \textbf{Chose CV over LIDAR for cost-effectiveness} — designed proposed recording rig (patent filing in progress): tripod-mounted black-and-white camera on a Jetson Orin GPU, capturing chalk markings and LED strips for drive-down and rebound height.
+                \item \textbf{Chose CV over LIDAR for cost-effectiveness} — helped file a provisional patent, designing a tripod-mounted 1000fps camera and Jetson Orin GPU capture rig.
             \end{highlights}
         \end{onecolentry}
 
@@ -271,6 +271,7 @@
             \begin{highlights}
                 \item Trained PPO quadruped policies in MuJoCo/Gymnasium; terrain-adapted policy achieves \textbf{2.1x reward (893$\pm$130 vs. 424$\pm$106)} and 40\% lower fall rate than the flat-trained baseline on unseen terrain, validated across 10 matched seeds per condition.
                 \item Built leg-amputation-robust specialist policies (\textbf{$\sim$49x flat-baseline reward}) and a compound policy router that switches checkpoints by damaged leg, beating any single policy across a 4-leg $\times$ 10-seed evaluation sweep.
+                \item Validated all headline results via \textbf{multi-seed training replication and an automated regression test suite}; generated comparison videos for each experiment.
             \end{highlights}
         \end{onecolentry}
 
