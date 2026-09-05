@@ -8,9 +8,25 @@ LaTeX source for Arjun Nanduri's resume. See `CLAUDE.md` for the content strateg
 - `resume_mle.tex` — one-page, ML/CV-emphasis. Sendable.
 - `resume_swe.tex` — one-page, SWE/Founder-emphasis. Sendable.
 - `resume_pm.tex` — one-page, Product Management-emphasis. Sendable.
-- `resume_research.tex` — one-page, Academic/Research-emphasis. Sendable.
+- `resume_research_ai.tex` — one-page, Academic/Research-emphasis (AI/NLP/CV/agents audience). Sendable.
+- `resume_research_robotics.tex` — one-page, Academic/Research-emphasis (Robotics/RL audience). Sendable.
 
 All five share the same preamble/macros (though margins/spacing are tuned per profile) — content differs, formatting mechanism does not.
+
+## Checking a resume (fast, no vision tokens)
+
+```
+pip3 install --user pymupdf pillow numpy   # one-time
+python3 scripts/check_resume.py            # checks every resume_*.tex
+python3 scripts/check_resume.py --render   # also saves a per-page PNG
+                                            # under .build/previews/
+```
+
+Reports exact page count, any `Overfull \hbox` lines (orphan/wrap proxy),
+and trailing-whitespace/margin slack for each file — see `CLAUDE.md`'s
+Workflow section for how this fits into the editing loop. It's a fast
+pre-filter, not a substitute for actually reading the rendered PDF before
+calling an edit done.
 
 ## Setup: LaTeX + VS Code rendering (macOS)
 
