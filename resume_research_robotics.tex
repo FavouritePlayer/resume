@@ -206,7 +206,7 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using a custom edit-distance metric over lemma forms.
+                \item Fine-tuned BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using Levenshtein distance over lemma forms.
                 \item Built preprocessing and alignment pipelines for structured linguistic data from ORACC's cuneiform corpus (\textbf{$\sim$1M annotated words across $\sim$10K texts}).
                 \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
             \end{highlights}
@@ -258,7 +258,8 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Implemented per-triangle affine solve (3-point correspondence $\rightarrow$ 2$\times$3 matrix), inverse warping with bilinear interpolation, and piecewise Delaunay-triangle warping to produce morphs and mean faces; \textbf{all core geometry self-implemented in NumPy}, OpenCV limited to I/O and masking.
+                \item Implemented affine warping, inverse mapping, and bilinear interpolation \textbf{from scratch in NumPy} to remap pixels between corresponding faces.
+                \item Solved a per-triangle affine transform from 3-point landmark correspondences (\textbf{3-point $\rightarrow$ 2$\times$3 matrix}), combined with polygon-masked, piecewise Delaunay-triangle warping to compute image morphs and mean faces.
             \end{highlights}
         \end{onecolentry}
 

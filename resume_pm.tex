@@ -238,7 +238,7 @@
         \begin{onecolentry}
             \begin{highlights}
                 \item Stepped up to lead disorganized team with no formal authority — \textbf{built shared task system}, assigned work by strength, held mock presentations, presented at UC Berkeley Discovery Symposium.
-                \item Fine-tuned a BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using a custom edit-distance metric.
+                \item Fine-tuned a BART transformer for Ancient Akkadian lemmatization in low-resource settings, \textbf{beating open-source baselines by 15\%} using Levenshtein distance.
                 \item Owned the data pipeline for a $\sim$1M-word, $\sim$10K-text raw corpus — preprocessing and alignment work that \textbf{had to be right before any model result was credible}.
             \end{highlights}
         \end{onecolentry}
@@ -275,13 +275,14 @@
         \begin{extendedtwocolentry}{
             \href{https://github.com/FavouritePlayer/dealscout-cloud}{github.com/FavouritePlayer/dealscout-cloud}
         }
-            \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
+            \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, AWS)
         \end{extendedtwocolentry}
 
         \vspace{0.19 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Redesigned the demo's cloud infrastructure around a hard \$10 budget — \textbf{chose a lightweight self-hosted Kubernetes distribution over managed EKS to avoid $\sim$\$73/month in control-plane cost} — while still deploying a real 4-service system (agent, scraper, vector DB, frontend) on AWS via Terraform.
+                \item Prioritized image verification for only high-confidence candidates instead of the full scan, \textbf{cutting scan time $\sim$4x} to keep the agent usable within scraping-frequency limits.
+                \item Diagnosed a bias where showing the model a listing's asking price anchored its own valuation estimate, undermining trust in flagged deals — fixed by withholding the price, \textbf{lifting genuine-deal detection $\sim$6x} (2/30 $\rightarrow$ 51/120).
             \end{highlights}
         \end{onecolentry}
 
