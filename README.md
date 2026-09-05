@@ -28,6 +28,32 @@ Workflow section for how this fits into the editing loop. It's a fast
 pre-filter, not a substitute for actually reading the rendered PDF before
 calling an edit done.
 
+## Measuring exact per-bullet height (for a big trim)
+
+```
+python3 scripts/measure_layout.py resume_mle.tex
+python3 scripts/measure_layout.py resume_mle.tex --suggest-cuts --overflow-in 0.4
+```
+
+When a profile needs real trimming (not just a one-line fix), this reports
+the *exact* height (via pdfTeX's own `\pdfsavepos`/`\pdflastypos`, not a
+pixel estimate) of every bullet and section, so you can see precisely which
+bullets are the biggest space cost before deciding what to cut.
+`--suggest-cuts --overflow-in <n>` (get `<n>` from `check_resume.py`'s
+"extra slack" or from `11 - trailing` on the overflow page) ranks bullets
+largest-first and shows a running total of how much cutting closes a given
+overflow — a starting point to apply real content judgment against (per
+CLAUDE.md's cutting-priority rules), not a decision to apply blindly.
+
+**Validated, and validated to have a real limit**: predicting a whitespace
+change from removing an item on the *last* page matched a real recompile
+almost exactly. Predicting *across* a page break does not work by
+arithmetic alone — removing earlier content can pull material back from
+the next page (a real, non-linear `\needspace`-driven TeX reflow effect),
+so a cut that crosses a page boundary needs `check_resume.py` re-run
+afterward to confirm the actual result. See the script's module docstring
+for the specific numbers from that test.
+
 ## Setup: LaTeX + VS Code rendering (macOS)
 
 Steps to get the `.tex` files compiling and previewing inside VS Code's LaTeX Workshop extension on a fresh Mac.
