@@ -326,18 +326,24 @@
         \end{onecolentry}
 
         \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/DealScout}{github.com/FavouritePlayer/DealScout}
+            \href{https://github.com/FavouritePlayer/dealscout-cloud}{github.com/FavouritePlayer/dealscout-cloud}
         }
-            \textbf{DealScout — Resale Arbitrage Agent,} \textit{Hackathon Project} (LangGraph, Playwright, HydraDB)
+            \textbf{DealScout — Resale Arbitrage Agent,} \textit{Cloud-Deployed Agent (orig. Hackathon Project)} (LangGraph, Playwright, Qdrant, FastAPI, Next.js, Docker, Kubernetes, Terraform, AWS)
         \end{extendedtwocolentry}
 
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Built a LangGraph-orchestrated agent that scrapes live Craigslist listings via Playwright, scores resale value with deterministic arithmetic kept separate from LLM judgment to avoid hallucinated pricing, then filters and ranks candidates through a structured-output LLM call.
-                \item Integrated HydraDB as a per-user external memory store: rejection feedback is ingested as natural-language preferences and recalled on future scans so filtering improves session over session.
+                \item Replaced the original hackathon-sponsor memory SDK with a self-hosted Qdrant vector store for per-user preference memory: rejection feedback is embedded locally (fastembed) and recalled on future scans so filtering improves session over session, with no external API dependency.
                 \item Diagnosed and fixed a silent dependency conflict where a transitive protobuf pin broke the vector DB client's writes with no error at insert time; resolved via explicit no-deps install plus version re-assertion.
                 \item Restricted image-attachment to the post-filter candidate queue instead of the full scan, avoiding a $\sim$4x blowup in scan time.
+                \item Migrated the project from a single local process into a 4-service architecture (agent API, scraper, vector store, Next.js frontend), each containerized separately with Docker and deployed as Kubernetes Deployments/Services on a self-managed k3s cluster on AWS EC2, provisioned end-to-end with Terraform.
+                \item Designed a cost-conscious, session-scoped infra lifecycle (\texttt{terraform apply}/\texttt{destroy} around each demo session) that keeps a multi-hour AWS deployment under \$0.10, choosing a lightweight self-hosted Kubernetes distribution over a managed EKS control plane ($\sim$\$73/month with no free tier) to fit the budget while still exercising real orchestration primitives.
+                \item Root-caused a cluster-wide DNS outage: the VPC's CIDR range collided with Kubernetes' default pod network, silently hijacking the AWS DNS resolver's address and crash-looping CoreDNS; fixed by re-provisioning the VPC on a non-overlapping range.
+                \item Converted the scraper from a scheduled batch job into an always-on microservice exposing an on-demand HTTP trigger, guarded by a concurrency lock, so the frontend can request a live scrape instead of waiting on a fixed 30-minute schedule.
+                \item Diagnosed an anchoring bias in the LLM's resale-valuation prompt — showing the model the seller's asking price pulled its own ``fair value'' estimate toward that number — and fixed it by withholding the price from the prompt entirely, increasing the rate of genuinely underpriced listings surfaced $\sim$6x (2 of 30 scraped listings $\rightarrow$ 51 of 120).
+                \item Set up CI/CD via GitHub Actions to build and push Docker images to ECR on every push to main; discovered the AWS account's org-level policy blocked OIDC federation and implemented a least-privilege scoped IAM-user fallback instead.
             \end{highlights}
         \end{onecolentry}
 
@@ -403,7 +409,7 @@
         \vspace{0.10 cm}
 
         \begin{onecolentry}
-            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, MongoDB, Excel, Git, PyTorch, scikit-learn, Pandas, Transformers (BART), NLTK, spaCy, LangGraph, FastAPI, Playwright, MuJoCo, Gymnasium, Stable-Baselines3.
+            \textbf{Technologies:} React.js, Angular, Spring Boot, Flutter, Next.js, Firebase, AWS, Docker, Kubernetes, Terraform, GitHub Actions, MongoDB, Qdrant, Excel, Git, PyTorch, scikit-learn, Pandas, Transformers (BART), NLTK, spaCy, LangGraph, FastAPI, Playwright, MuJoCo, Gymnasium, Stable-Baselines3.
         \end{onecolentry}
 
     \section{Publications}

@@ -261,7 +261,7 @@
         \end{onecolentry}
 
         \begin{extendedtwocolentry}{
-            \href{https://github.com/FavouritePlayer/DealScout}{github.com/FavouritePlayer/DealScout}
+            \href{https://github.com/FavouritePlayer/dealscout-cloud}{github.com/FavouritePlayer/dealscout-cloud}
         }
             \textbf{DealScout — Resale Arbitrage Agent} (LangGraph, Playwright)
         \end{extendedtwocolentry}
@@ -271,6 +271,7 @@
             \begin{highlights}
                 \item Built a LangGraph-orchestrated agent that scores resale value with \textbf{deterministic arithmetic kept separate from LLM judgment} to avoid hallucinated pricing, then filters and ranks candidates through a structured-output LLM call.
                 \item Restricted image-attachment to the post-filter candidate queue instead of the full scan, \textbf{avoiding a $\sim$4x blowup in scan time}.
+                \item Diagnosed an anchoring bias in the valuation prompt — a shown reference price pulled the model's own estimate toward it — fixed by withholding it, \textbf{lifting genuine positive-detection rate $\sim$6x} (2/30 $\rightarrow$ 51/120).
             \end{highlights}
         \end{onecolentry}
 
