@@ -54,6 +54,31 @@ so a cut that crosses a page boundary needs `check_resume.py` re-run
 afterward to confirm the actual result. See the script's module docstring
 for the specific numbers from that test.
 
+## Finding a minimal, verified fix when a profile is over one page
+
+```
+python3 scripts/autofit.py resume_mle.tex               # dry run: reports the plan
+python3 scripts/autofit.py resume_mle.tex --apply        # writes it, then re-read/recompile
+python3 scripts/autofit.py resume_mle.tex --floor-in 0.5 # override the margin floor (default 0.5in)
+```
+
+Searches for a combination of (margin reduction, bullets cut) that brings
+a file back to one page — but unlike a prediction, every candidate is
+verified by an actual compile, so it's robust across the page-break
+non-linearity `measure_layout.py` can't predict through. Policy: margin
+room down to the floor is used first since it costs no content (skipped
+entirely if the file's margin is already at/below the floor — true for
+all five profiles as of this writing); only once that's exhausted does it
+search content cuts, ranked largest-first by `measure_layout.py`'s exact
+heights purely to keep the search efficient — that ranking is not a
+content-value judgment, review the proposed cut list against CLAUDE.md's
+cutting-priority rules before using `--apply`. Each file's margin is read
+from and written back to that file's own geometry block independently —
+nothing here shares a margin value across profiles. Validated end-to-end
+against three real, controlled scenarios (margin already at floor →
+content-only; margin insufficient alone → margin maxed + minimal cuts on
+top; margin alone sufficient → zero cuts) before being trusted.
+
 ## Setup: LaTeX + VS Code rendering (macOS)
 
 Steps to get the `.tex` files compiling and previewing inside VS Code's LaTeX Workshop extension on a fresh Mac.
