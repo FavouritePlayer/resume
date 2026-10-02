@@ -150,3 +150,11 @@ Check the real error via Cmd+Shift+P → "Developer: Open Webview Developer Tool
     "latex-workshop.view.pdf.viewer": "browser"
 }
 ```
+
+## Before/after snapshots
+
+```
+python3 scripts/snapshot.py diff [resume_swe]   # current vs previous/ (tex diff + page counts)
+python3 scripts/snapshot.py accept              # previous/ <- git HEAD (the post-commit hook does this)
+git config core.hooksPath .githooks             # one-time per clone, enables the post-commit hook
+```

@@ -17,3 +17,7 @@ cv_master.pdf
 
 # macOS
 .DS_Store
+
+# Local revolving before/after snapshot (see scripts/snapshot.py)
+previous/
+Nanduri_Academic_Summary.pdf
